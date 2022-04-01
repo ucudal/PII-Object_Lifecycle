@@ -19,6 +19,21 @@ namespace ClassLibrary
         /// <value><c>true</c> si las máquinas fueron encendidas, <c>false</c> en caso contrario.</value>
         public bool IsEngineStarted { get; private set; }
 
+        private static int Count = 0;
+
+        private static string Id {get; set;} 
+
+
+        public Train(string id)
+        {
+            Id = id;
+            Count += 1;
+        }
+        ~Train()
+        {
+            Count--;
+        }
+
         /// <summary>
         /// Enciende las máquinas del tren.
         /// </summary>
